@@ -69,7 +69,7 @@ export default class Home extends React.Component {
 				<div>
 						{/*the big banner js like old times*/}
 								<div style={homeheader}>
-			                       <h4 style={homebanerheader}>See It Different.ly</h4>
+			                       <h4 style={homebanerheader}>Nelson & Francis</h4>
 									<h6 style={homebannermotto}>Learn Build & Repeat The Process</h6>
 
 
