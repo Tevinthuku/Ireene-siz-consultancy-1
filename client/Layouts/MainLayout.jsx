@@ -30,12 +30,7 @@ const darkMuiTheme = getMuiTheme(darkBaseTheme);
 
 var MediaQuery = require('react-responsive');
 
-//for the call button for the toolbar
-const callbuttonfortoolbar = {
-	position: 'fixed',
-	marginRight: 5,
-	top: 5
-}
+
 
 //making the toolbar fixed
 const mainlayouttoolbarstyle = {
@@ -45,9 +40,24 @@ const mainlayouttoolbarstyle = {
 	backgroundColor:'#03A9F4'
 }
 
+//const for the toolbar title
+const thetoolbartitlestyle = {
+	position: 'fixed',
+	margin:'auto',
+	top:-3,
+	right:'50%'
+}
+
+// for the services
+
+
+
 // for the width of the dropdown
 const dropdownwidthlayout = {
-	width: 200
+	width: 200,
+	position:'fixed',
+	right: 10,
+	top: 5
 }
 
 
@@ -87,14 +97,18 @@ class MainLayout extends React.Component {
 					          </MediaQuery>
 					    {/*fore the home button*/}
 					          <MediaQuery query='(min-width: 769px)'>
-					            <FlatButton label="Home" style={{marginLeft:5}}/>
-					            <FlatButton label="About Us" style={{marginLeft:5}}/>
+					            <FlatButton label="Home" style={{marginLeft:5, top: 10, position:'fixed'}}/>
+					            <FlatButton label="About Us" style={{left:120, top: 10, position:'fixed'}}/>
 					          </MediaQuery>				    
 
 					        </ToolbarGroup>
 
 					        <ToolbarGroup>
-					        	 <ToolbarTitle text="Nelson & Francis" />
+
+						         <MediaQuery query='(min-width: 769px)'>
+						        	 <ToolbarTitle text="Nelson & Francis" style={thetoolbartitlestyle}/>
+						         </MediaQuery> 
+
 					        </ToolbarGroup>
 
 
@@ -114,10 +128,6 @@ class MainLayout extends React.Component {
 								          <MenuItem value={5} primaryText="Taxes" />
 								        </DropDownMenu>
 
-
-								        <IconButton style={callbuttonfortoolbar}>
-								        	<CommunicationCall />
-								        </IconButton>
 								</MediaQuery>
 								        
 					        </ToolbarGroup>
