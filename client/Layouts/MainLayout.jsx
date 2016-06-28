@@ -145,6 +145,7 @@ class MainLayout extends React.Component {
                   docked={false}
                   width={310}
                   open={this.state.open}
+                  swipeAreaWidth={30}
                   onRequestChange={(open) => this.setState({open})}
                 >
 					<div style={{marginLeft:5}}>
