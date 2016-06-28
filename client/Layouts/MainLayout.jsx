@@ -3,11 +3,11 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import AppBar from 'material-ui/AppBar';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import IconMenu from 'material-ui/IconMenu';
+import DropDownMenu from 'material-ui/DropDownMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import SocialPersonOutline from 'material-ui/svg-icons/social/people-outline';
 import SocialNotificationsActive from 'material-ui/svg-icons/social/notifications-active';
@@ -22,18 +22,33 @@ import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
-
+import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import CommunicationCall from 'material-ui/svg-icons/communication/call';
 const lightMuiTheme = getMuiTheme(lightBaseTheme);
-
+import FlatButton from 'material-ui/FlatButton';
 const darkMuiTheme = getMuiTheme(darkBaseTheme);
-//styling for the appbar
 
-const appbar = {
-	height:70,
-	position:'fixed',
-	backgroundColor: '#03A9F4'
+var MediaQuery = require('react-responsive');
+
+//for the call button for the toolbar
+const callbuttonfortoolbar = {
+	position: 'fixed',
+	marginRight: 5,
+	top: 5
 }
 
+//making the toolbar fixed
+const mainlayouttoolbarstyle = {
+	position:'fixed',
+	width: '100%',
+	zIndex: 100,
+	backgroundColor:'#03A9F4'
+}
+
+// for the width of the dropdown
+const dropdownwidthlayout = {
+	width: 200
+}
 
 
 class MainLayout extends React.Component {
@@ -41,7 +56,9 @@ class MainLayout extends React.Component {
 		super(props);
 		this.handleToggle = this.handleToggle.bind(this);
 		this.handleClose = this.handleClose.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 		this.state = {open: false};
+		this.state = {value: 1};
 	}
 
 	handleToggle() {
@@ -52,16 +69,64 @@ class MainLayout extends React.Component {
       this.setState({open: false});
     }
 
+     handleChange(event, index, value){
+     	this.setState({value});
+     }
+
    render() {
       return (
          <div style={{margin:0}}>
      {/*the app bar*/}
             <MuiThemeProvider muiTheme={lightMuiTheme}>
-				  <AppBar
-				    style = {appbar}
-				    className="mainlayouttopbar"
-				    iconElementLeft={<IconButton onTouchTap={this.handleToggle}><NavigationMenu /></IconButton>}
-				  />
+              <div>
+              	      <Toolbar style={mainlayouttoolbarstyle}>
+					        <ToolbarGroup firstChild={true}>
+					    {/*for the navigation toggle*/}
+					          <MediaQuery query='(max-width: 768px)'>
+					            <IconButton onTouchTap={this.handleToggle}><NavigationMenu /></IconButton>
+					          </MediaQuery>
+					    {/*fore the home button*/}
+					          <MediaQuery query='(min-width: 769px)'>
+					            <FlatButton label="Home" style={{marginLeft:5}}/>
+					            <FlatButton label="About Us" style={{marginLeft:5}}/>
+					          </MediaQuery>				    
+
+					        </ToolbarGroup>
+
+					        <ToolbarGroup>
+					        	 <ToolbarTitle text="Nelson & Francis" />
+					        </ToolbarGroup>
+
+
+					        <ToolbarGroup>
+
+					            <MediaQuery query='(min-width: 769px)'>
+								        <DropDownMenu
+								          value={this.state.value}
+								          onChange={this.handleChange}
+								          style={dropdownwidthlayout}
+								          autoWidth={false}
+								        >
+								          <MenuItem value={1} primaryText="Services" />
+								          <MenuItem value={2} primaryText="Advisory" />
+								          <MenuItem value={3} primaryText="Assuarance" />
+								          <MenuItem value={4} primaryText="Forensic" />
+								          <MenuItem value={5} primaryText="Taxes" />
+								        </DropDownMenu>
+
+
+								        <IconButton style={callbuttonfortoolbar}>
+								        	<CommunicationCall />
+								        </IconButton>
+								</MediaQuery>
+								        
+					        </ToolbarGroup>
+					      </Toolbar>
+			      
+              </div>
+
+
+
             </MuiThemeProvider>
  {/*the drawer*/}
              <MuiThemeProvider muiTheme={darkMuiTheme}>       
@@ -86,8 +151,8 @@ class MainLayout extends React.Component {
 							            linkButton={true}
 							        /></Link> 
 
-		                 {/*the services link*/}
-		                <List>    
+		                       {/*the services link*/}
+		                       <List>    
 							      <ListItem
 							      key={2}
 							        primaryText="Services"
@@ -178,7 +243,7 @@ class MainLayout extends React.Component {
 
 				      					]}
 				      				/>			                    	
-		                    </List>
+		                </List>
 
 					</div>
                 </Drawer>
