@@ -30,6 +30,7 @@ const darkMuiTheme = getMuiTheme(darkBaseTheme);
 
 var MediaQuery = require('react-responsive');
 
+var css = require('../styles/MainLayout.styl');
 
 
 //making the toolbar fixed

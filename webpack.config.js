@@ -1,3 +1,4 @@
+var poststylus = require('poststylus');
 var config = {
    entry: './main.js',
 	
@@ -21,8 +22,14 @@ var config = {
             query: {
                presets: ['es2015', 'react']
             }
-         }
+         },
+            { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' }
       ]
+   },
+   stylus: {
+     use: [
+       poststylus([ 'autoprefixer'])
+     ]
    }
 }
 
