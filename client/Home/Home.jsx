@@ -98,6 +98,62 @@ The sponsor mandated consultants to provide business support services in financi
 
   				      <br/>
 
+  				      <Card> 
+		  				      <CardTitle title="Ministry of Health, Department of Nutrition (GAIN Food fortification Project)  " />
+		  				      <CardText> 
+		Donor funded US $2.32Million for the food fortification project. Implementation of the project involved a number of players namely Ministry of Health, Nutrition Division; GAIN, Kenya National Farmers Federation Association (KNFFA) and Kenya Food Fortification Alliance. Nelson & Francis Associates were appointed project Auditors to perform Risk based audit for the project. The assignment was undertaken for a period of three years with extension for one year thus the project lasted a period of 4 years.  				      	
+		  				      </CardText>
+  				      </Card>
+
+  				      <br />
+
+  				      <Card> 
+  				      	<CardTitle title="Techno serve SPADE Project (Nyanza & Western), Poverty eradication " />
+
+  				      	<CardText> 
+  				      		This is a poverty eradication program covered Ten (10) hubs in Nyanza and Western Kenya called SPADE program. SPADE represents Small Holder Poultry Development. Our firm undertook the assignment under the project sponsor: Techno serve. The project entailed offering business support services namely: financial management, audit, tax systems with strict reporting deadline, among other support services. The project was successfully completed within timeline set by client and has exited.
+  				      	</CardText>
+  				      </Card>
+
+  				      <br />
+
+  				      <Card> 
+  				      	<CardTitle title=" Techno serve Risk based audit Project " />
+
+  				      	<CardText> 
+This assignment entailed provision of business support in training financial management Audit, particularly risk based audit, Systems Audit and Tax compliance to community based projects, particularly Dairies subsector in North and South Rift region. The assignment was on a year basis renewable.  				      	</CardText>
+  				      </Card>  
+
+  				      <br />
+
+  				      <Card> 
+  				      	<CardTitle title="ACTED Kenya " />
+
+  				      	<CardText> 
+This is an NGO Active in East Pokot and Baringo. We carried out systems tax & audit for  years 2008 and 2010. 
+						</CardText>
+  				      </Card>  
+
+  				      <br />
+
+  				      <Card> 
+  				      	<CardTitle title="Kerio Centre for Community Development and Human Rights (KCCDHR) " />
+
+  				      	<CardText> 
+This assignment among other engagements in various industries was involved in providing business support services for two years in risk based audit. Contract is renewable yearly and the project is still in progress.						</CardText>
+  				      </Card>  
+
+  				      <br />
+
+  				      <Card> 
+  				      	<CardTitle title="Sikom Peace Network, West Pokot" />
+
+  				      	<CardText> 
+We have concluded risk based audit covering two years from 2013 and 2014. This NGO is based in West Pokot and the project is now completed.
+  				      	</CardText>
+  				      </Card> 
+
+
 				 </div>		 	
 			 </section>
 	  </MuiThemeProvider>			

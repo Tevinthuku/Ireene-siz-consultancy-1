@@ -98,8 +98,8 @@ class MainLayout extends React.Component {
 					          </MediaQuery>
 					    {/*fore the home button*/}
 					          <MediaQuery query='(min-width: 769px)'>
-					            <FlatButton label="Home" style={{marginLeft:5, top: 10, position:'fixed'}}/>
-					            <FlatButton label="About Us" style={{left:120, top: 10, position:'fixed'}}/>
+					            <FlatButton label="Home" linkButton={true} href="#" style={{marginLeft:5, top: 10, position:'fixed'}}/>
+					            <FlatButton label="About Us" linkButton={true} href="#/aboutus?_k=rqwcdy" style={{left:120, top: 10, position:'fixed'}}/>
 
 					          </MediaQuery>				    
 
@@ -145,7 +145,7 @@ class MainLayout extends React.Component {
 		                  <MenuItem leftIcon={<CommunicationBusiness />} linkButton={true} href="#" onTouchTap={this.handleClose}> Home</MenuItem>
 
 		              {/*the About Us link*/}
-						  <Link to="about us" style={{textDecoration:'none', position:'relative'}}>
+						  <Link to="aboutus" style={{textDecoration:'none', position:'relative'}}>
 							          <ListItem
 							            key={1}
 							            primaryText="About Us"

@@ -15,12 +15,17 @@ import Home from './client/Home/Home.jsx';
 //the services component
 import Services from './client/Services/Services.jsx';
 
+
+//import the about us page
+import AboutUs from './client/AboutUs/AboutUs.jsx'
+
 ReactDOM.render((
    <Router history = {hashHistory}>
       <Route path = "/" component = {MainLayout}>
          <IndexRoute component = {Home} />
          <Route path = "home" component = {Home} />
          <Route path = "services" component = {Services} />
+         <Route path = "aboutus" component = {AboutUs} />
       </Route>
    </Router>
 	
