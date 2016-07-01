@@ -46,7 +46,7 @@ const thetoolbartitlestyle = {
 	position: 'fixed',
 	margin:'auto',
 	top:-3,
-	right:'50%'
+	right: 50
 }
 
 // for the services
@@ -100,38 +100,29 @@ class MainLayout extends React.Component {
 					          <MediaQuery query='(min-width: 769px)'>
 					            <FlatButton label="Home" style={{marginLeft:5, top: 10, position:'fixed'}}/>
 					            <FlatButton label="About Us" style={{left:120, top: 10, position:'fixed'}}/>
+
 					          </MediaQuery>				    
 
 					        </ToolbarGroup>
 
 					        <ToolbarGroup>
 
+					          <MediaQuery query='(min-width: 769px)'>
+					            <FlatButton label="Services" linkButton={true} href="#/services?_k=rqwcdy" style={{left: 250, top: 10, position:'fixed'}}/>
+							   </MediaQuery>	
+
+					        </ToolbarGroup>
+
+					        <ToolbarGroup>
+
 						         <MediaQuery query='(min-width: 769px)'>
-						        	 <ToolbarTitle text="Nelson & Francis" style={thetoolbartitlestyle}/>
+						        	 <ToolbarTitle text="Nelson & Francis Associates" style={thetoolbartitlestyle}/>
 						         </MediaQuery> 
 
 					        </ToolbarGroup>
 
 
-					        <ToolbarGroup>
 
-					            <MediaQuery query='(min-width: 769px)'>
-								        <DropDownMenu
-								          value={this.state.value}
-								          onChange={this.handleChange}
-								          style={dropdownwidthlayout}
-								          autoWidth={false}
-								        >
-								          <MenuItem value={1} primaryText="Services" />
-								          <MenuItem value={2} primaryText="Advisory" />
-								          <MenuItem value={3} primaryText="Assuarance" />
-								          <MenuItem value={4} primaryText="Forensic" />
-								          <MenuItem value={5} primaryText="Taxes" />
-								        </DropDownMenu>
-
-								</MediaQuery>
-								        
-					        </ToolbarGroup>
 					      </Toolbar>
 			      
               </div>
@@ -154,114 +145,31 @@ class MainLayout extends React.Component {
 		                  <MenuItem leftIcon={<CommunicationBusiness />} linkButton={true} href="#" onTouchTap={this.handleClose}> Home</MenuItem>
 
 		              {/*the About Us link*/}
-						  <Link to="projects" style={{textDecoration:'none', position:'relative'}}>
+						  <Link to="about us" style={{textDecoration:'none', position:'relative'}}>
 							          <ListItem
 							            key={1}
 							            primaryText="About Us"
 							            leftIcon={<SocialPersonOutline />}
 							            onTouchTap={this.handleClose}
 							            linkButton={true}
-							        /></Link> 
+							        /></Link>
 
-		                       {/*the services link*/}
-		                       <List>    
-							      <ListItem
-							      key={2}
-							        primaryText="Services"
-							        leftIcon={<ActionWork />}
-							        initiallyOpen={true}
-							        primaryTogglesNestedList={true}
-							        nestedItems={[
-
+						  <Link to="services" style={{textDecoration:'none', position:'relative'}}>
 							          <ListItem
-							            key={3}
-							            primaryText="Advisory"
-							            leftIcon={<CommunicationChatBubble/>}
-								        initiallyOpen={false}
-								        primaryTogglesNestedList={true}
-								        nestedItems={[
-
-							          <ListItem
-							            key={4}
-							            primaryText="Mngt Consulting"
-							            onTouchTap={this.handleClose}
-							          />,
-
-							          <ListItem
-							            key={5}
-							            primaryText="Corporate Finance"
-							            onTouchTap={this.handleClose}
-							          />,
-
-							          <ListItem
-							            key={6}
-							            primaryText="Financial Planning"
-							            onTouchTap={this.handleClose}
-							          />,
-
-							          <ListItem
-							            key={7}
-							            primaryText="IT Consulting"
-							            onTouchTap={this.handleClose}
-							          />,
-
-							          <ListItem
-							            key={3}
-							            primaryText="Network Penetration Testing"
-							            onTouchTap={this.handleClose}
-							          />,
-									<ListItem
-							            key={8}
-							            primaryText="Reconstructing"
-							            onTouchTap={this.handleClose}
-							          />,
-
-							          <ListItem
-							            key={9}
-							            primaryText="Transaction Support"
-							            onTouchTap={this.handleClose}
-							          />,
-
-							          <ListItem
-							            key={10}
-							            primaryText="Hotel Consulting"
-							            onTouchTap={this.handleClose}
-							          />							          						          	          						          						          							          
-
-
-								        ]}
-							          />,
-
-							          <ListItem
-							            key={11}
-							            primaryText="Assuarance"
-							            leftIcon={<ActionAssessment />}
-							            onTouchTap={this.handleClose}
-							          />,		
-
-							          <ListItem
-							            key={12}
-							            primaryText="Forensic"
+							            key={2}
+							            primaryText="Services"
 							            leftIcon={<HardwareSecurity />}
 							            onTouchTap={this.handleClose}
-							          />,
+							            linkButton={true}
+							        /></Link>
 
-							          <ListItem
-							            key={13}
-							            primaryText="Taxes"
-							            leftIcon={<EditorAttachMoney />}
-							            onTouchTap={this.handleClose}
-							          />
-
-				      					]}
-				      				/>			                    	
-		                </List>
 
 					</div>
                 </Drawer>
             </MuiThemeProvider>
 
 {/*for the children components height b4 they get seen*/}
+     <div style={{height:80}}></div>
 
          {this.props.children}
          </div>
